@@ -5,5 +5,5 @@ This project was built using `React` + `Vite` + `Typescript` in the frontend and
 ## Run the project
 
 ```
-docker-compose up
+$ docker-compose up
 ```
