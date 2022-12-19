@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.ts"
+    "dev": "nodemon ./server.ts"
   },
   "dependencies": {
     "@trpc/server": "^10.5.0",

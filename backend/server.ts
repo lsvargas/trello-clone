@@ -1,26 +1,16 @@
 import express from "express";
-import { z } from 'zod';
-import { inferAsyncReturnType, initTRPC } from '@trpc/server';
 import * as trpcExpress from '@trpc/server/adapters/express';
-
-// created for each request
-const createContext = ({
-  req,
-  res,
-}: trpcExpress.CreateExpressContextOptions) => ({}); // no context
-
-type Context = inferAsyncReturnType<typeof createContext>;
-
-const t = initTRPC.context<Context>().create();
-
-const appRouter = t.router({
-  getUser: t.procedure.input(z.string()).query((req) => {
-    req.input; // string
-    return { id: req.input, name: 'Bilbo' };
-  }),
-});
+import { createContext } from "./trcp";
+import { appRouter } from "./routers/_app";
 
 const app = express();
+
+// app.use((req, _res, next) => {
+//   // request logger
+//   console.log('⬅️ ', req.method, req.path, req.body ?? req.query);
+
+//   next();
+// });
 
 app.use(
   '/trpc',
