@@ -1,6 +1,6 @@
 # Fake Trello
 
-This project was built using `React` + `Vite` + `Typescript` + `Tailwindcss` in the frontend and `Nodejs` in the backend :) 
+This project was built using `React` + `Vite` + `Typescript` + `Tailwindcss` in the frontend and `Express` in the backend, both taking advantage of `TRPC` :) 
 
 ## Run the project
 
