@@ -10,3 +10,13 @@ services:
       - "./frontend:/app"
     ports:
       - "3000:3000"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/app/node_modules"
+      - "./backend:/app"
+    ports:
+      - "4000:4000"
