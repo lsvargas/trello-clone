@@ -20,3 +20,17 @@ services:
       - "./backend:/app"
     ports:
       - "4000:4000"
+
+  postgres:
+    image: postgres:13.1
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=sammy
+      - POSTGRES_PASSWORD=your_password
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:

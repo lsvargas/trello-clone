@@ -1,21 +1,18 @@
 import { Draggable } from "react-beautiful-dnd";
 
-import ICardTask from "../../../types/cardTask.type";
+import ICardTask from "../../../types/listTask.type";
 
-interface CardTaskProps {
-  cardTask: ICardTask
+interface ListTaskProps {
+  listTask: ICardTask
   index: number;
-  cardId: number;
 }
 
-function CardTask({ cardTask, index, cardId  } : CardTaskProps) {
-
-  const uniqueItemColId = `taskId-${cardTask.id}-cardId-${cardId}`;
+function ListTask({ listTask, index  } : ListTaskProps) {
 
   return (
     <Draggable
-      key={uniqueItemColId}
-      draggableId={uniqueItemColId}
+      key={`${listTask.id}`}
+      draggableId={`${listTask.id}`}
       index={index}
     >
       {(provided: any) => (
@@ -26,7 +23,7 @@ function CardTask({ cardTask, index, cardId  } : CardTaskProps) {
           {...provided.dragHandleProps}
         >
           <p className="text-sm">
-            {cardTask.title}
+            {listTask.title}
           </p>
         </div>
       )}
@@ -34,4 +31,4 @@ function CardTask({ cardTask, index, cardId  } : CardTaskProps) {
   )
 }
 
-export default CardTask;
+export default ListTask;

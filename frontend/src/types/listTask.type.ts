@@ -1,7 +1,7 @@
-interface ICardTask {
+interface IListTask {
   id: number;
   title: string;
   tags: string[];
 }
 
-export default ICardTask;
+export default IListTask;
